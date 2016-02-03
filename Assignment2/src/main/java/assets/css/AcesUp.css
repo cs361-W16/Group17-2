@@ -12,7 +12,32 @@ text-align:center;
 font-weight: bold;
 }
 
+.columnOfCards{
+padding-top: 100px;
+height: 750px;
+vertical-align: text-top;
+}
+
 .cardLocation{
-width: 100px;
-background-color:#F0F0F0;
+display: inline;
+position: relative;
+margin-top: -100px;
+/*background-color:#F0F0F0;*/
+
+}
+
+#menu{
+text-align: center;
+padding: 15px;
+color: darkgreen;
+width 100%;
+background-color: #FF8080;
+}
+
+.menuitem{
+margin: 0px 100px 0px 100px;
+}
+
+#dealbutton{
+float: right;
 }
