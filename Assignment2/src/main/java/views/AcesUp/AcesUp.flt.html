@@ -1,9 +1,10 @@
+<body>
 <h1>Aces Up</h1>
 
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
-<body>
+<img id="dealButton" src="assets/cards/Back.png" alt="Deal">
 
 <table>
     <tr class="title">
@@ -13,7 +14,7 @@
         <td >Column3</td>
     </tr>
 
-    <tr><td class="columnOfCards" id="c0">
+    <tr><td class="columnOfCards" id="c0"><!--
         <table>
             <tr><td class="cardLocation l0"></td></tr>
             <tr><td class="cardLocation l1"></td></tr>
@@ -29,27 +30,9 @@
             <tr><td class="cardLocation l11"></td></tr>
             <tr><td class="cardLocation l12"></td></tr>
             <tr><td class="cardLocation l13"></td></tr>
-        </table>
-    </td>
-        <td class="columnOfCards" id="c1">
-            <table>
-                <tr><td class="cardLocation l0"></td></tr>
-                <tr><td class="cardLocation l1"></td></tr>
-                <tr><td class="cardLocation l2"></td></tr>
-                <tr><td class="cardLocation l3"></td></tr>
-                <tr><td class="cardLocation l4"></td></tr>
-                <tr><td class="cardLocation l5"></td></tr>
-                <tr><td class="cardLocation l6"></td></tr>
-                <tr><td class="cardLocation l7"></td></tr>
-                <tr><td class="cardLocation l8"></td></tr>
-                <tr><td class="cardLocation l9"></td></tr>
-                <tr><td class="cardLocation l10"></td></tr>
-                <tr><td class="cardLocation l11"></td></tr>
-                <tr><td class="cardLocation l12"></td></tr>
-                <tr><td class="cardLocation l13"></td></tr>
-            </table>
+        </table>-->
         </td>
-        <td class="columnOfCards" id="c2">
+        <td class="columnOfCards" id="c1"><!--
             <table>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
@@ -65,9 +48,9 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
-            </table>
+            </table>-->
         </td>
-        <td class="columnOfCards" id="c3">
+        <td class="columnOfCards" id="c2"><!--
             <table>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
@@ -83,12 +66,34 @@
                 <tr><td class="cardLocation l11"></td></tr>
                 <tr><td class="cardLocation l12"></td></tr>
                 <tr><td class="cardLocation l13"></td></tr>
-            </table>
+            </table>-->
+        </td>
+        <td class="columnOfCards" id="c3"><!--
+            <table>
+                <tr><td class="cardLocation l0"></td></tr>
+                <tr><td class="cardLocation l1"></td></tr>
+                <tr><td class="cardLocation l2"></td></tr>
+                <tr><td class="cardLocation l3"></td></tr>
+                <tr><td class="cardLocation l4"></td></tr>
+                <tr><td class="cardLocation l5"></td></tr>
+                <tr><td class="cardLocation l6"></td></tr>
+                <tr><td class="cardLocation l7"></td></tr>
+                <tr><td class="cardLocation l8"></td></tr>
+                <tr><td class="cardLocation l9"></td></tr>
+                <tr><td class="cardLocation l10"></td></tr>
+                <tr><td class="cardLocation l11"></td></tr>
+                <tr><td class="cardLocation l12"></td></tr>
+                <tr><td class="cardLocation l13"></td></tr>
+            </table>-->
         </td>
     </tr>
 </table>
 
-<button id="dealButton">Deal</button>
+<section id="menu">
+<span class="menuitem">Score: <span id="score">0</span></span>
+<button class="menuitem" id="Help">Help</button>
+</section>
+
 <BR>Remove from: <button id="Remove1">Column1</button><button id="Remove2">Column2</button><button id="Remove3">Column3</button><button id="Remove4">Column4</button>
 
 <BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button>
@@ -98,28 +103,24 @@
 var game;
 
 function display(game) {
-console.log(game);
-
-$( '.columnOfCards .cardLocation' ).html("");
+    console.log(game);
+    $( '.columnOfCards' ).html("");
 
     $.each(game.cols[0], function( key, val ) {
-        $( '#c0 .l'+key ).html("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing>");
+        $( '#c0' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
- $.each(game.cols[1], function( key, val ) {
-        $( '#c1 .l'+key ).html("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing>");
+    $.each(game.cols[1], function( key, val ) {
+        $( '#c1' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
- $.each(game.cols[2], function( key, val ) {
-        $( '#c2 .l'+key ).html("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing>");
+    $.each(game.cols[2], function( key, val ) {
+        $( '#c2' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
- $.each(game.cols[3], function( key, val ) {
-        $( '#c3 .l'+key ).html("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing>");
+    $.each(game.cols[3], function( key, val ) {
+        $( '#c3' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
-
-
-
 }
 
 $.getJSON("http://localhost:8080/game", function( data ) {
