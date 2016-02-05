@@ -13,7 +13,9 @@ font-weight: bold;
 }
 
 .columnOfCards{
+background: url('../cards/blank.png') no-repeat;
 padding-top: 100px;
+width: 114px;
 height: 750px;
 vertical-align: text-top;
 }
