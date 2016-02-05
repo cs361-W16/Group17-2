@@ -1,9 +1,9 @@
 tr{
-width:500px;
+width: 20%;
 }
 
 td{
-width:100px;
+width:114px;
 height:20px;
 text-align:center;
 }
@@ -54,7 +54,7 @@ table{
 text-align:center;
 margin-left:auto;
 margin-right:auto;
-border-spacing: 150px 5px;
+position: relative;
 }
 
 footer{
