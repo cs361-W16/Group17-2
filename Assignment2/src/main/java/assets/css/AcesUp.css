@@ -29,40 +29,44 @@ margin-top: -100px;
 #menu{
 text-align: center;
 padding: 15px;
-color: darkgreen;
+//color: darkgreen;
 width 100%;
-background-color: #FF8080;
+//background-color: #FF8080;
 }
 
 .menuitem{
 margin: 0px 100px 0px 100px;
 }
 
-#dealbutton{
-float: right;
-}
+//#dealbutton{
+//float: right;
+//}
 
 h1{
 text-align:center;
 font-size:450%;
+margin-top: 50px;
 }
 
 table{
 text-align:center;
 margin-left:auto;
 margin-right:auto;
+border-spacing: 150px 5px;
 }
 
 footer{
 text-align:center;
 margin-left:auto;
 margin-right:auto;
-padding-top:10px;
-padding-bottom:10px;
+background-color:green;
 }
 
 body{
-background-color:NavajoWhite;
+background-size:cover;
+background-image: url("../cards/felt.png");
+margin: 0px;
+color:white;
 }
 
 button{
