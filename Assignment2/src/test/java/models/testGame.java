@@ -58,8 +58,10 @@ public class testGame {
         Game g = new Game();
         g.buildDeck();
         g.customDeal(0,3,6,9);
+        assertEquals(0,g.getScore());
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());
+        assertEquals(1,g.getScore());
     }
 
 

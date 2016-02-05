@@ -3,7 +3,7 @@ width: 20%;
 }
 
 td{
-width:114px;
+width:120px;
 height:20px;
 text-align:center;
 }
@@ -14,8 +14,9 @@ font-weight: bold;
 
 .columnOfCards{
 background: url('../cards/blank.png') no-repeat;
+background-position: center top;
 padding-top: 100px;
-width: 114px;
+width: 120px;
 height: 750px;
 vertical-align: text-top;
 }
@@ -25,10 +26,15 @@ display: inline;
 position: relative;
 margin-top: -100px;
 /*background-color:#F0F0F0;*/
+}
 
+.selected{
+border: 2px solid red;
+border-radius: 10px;
 }
 
 #menu{
+width: 100%;
 text-align: center;
 padding: 15px;
 //color: darkgreen;
@@ -36,8 +42,8 @@ width 100%;
 //background-color: #FF8080;
 }
 
-.menuitem{
-margin: 0px 100px 0px 100px;
+#menu td {
+width: 20%
 }
 
 //#dealbutton{
@@ -47,7 +53,7 @@ margin: 0px 100px 0px 100px;
 h1{
 text-align:center;
 font-size:450%;
-margin-top: 50px;
+margin: 20px 0px 20px 0px;
 }
 
 table{
