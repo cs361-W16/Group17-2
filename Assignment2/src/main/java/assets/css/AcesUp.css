@@ -3,6 +3,7 @@ width: 20%;
 }
 
 td{
+min-width: 114px;
 width:120px;
 height:20px;
 text-align:center;
@@ -29,6 +30,7 @@ margin-top: -100px;
 }
 
 .selected{
+position: center top;
 border: 2px solid red;
 border-radius: 10px;
 }
@@ -46,14 +48,22 @@ width 100%;
 width: 20%
 }
 
-//#dealbutton{
-//float: right;
-//}
+#deal_button{
+background: url('../cards/empty.png') no-repeat;
+cursor:pointer;
+
+}
 
 h1{
 text-align:center;
 font-size:450%;
 margin: 20px 0px 20px 0px;
+}
+
+h2{
+font-size:120%;
+font-color: #E78534
+font-weight: bold;
 }
 
 table{
@@ -74,7 +84,6 @@ body{
 background-size:cover;
 background-image: url("../cards/felt.png");
 margin: 0px;
-color:white;
 }
 
 button{
@@ -101,4 +110,20 @@ button{
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #4d3534;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #3e8e41;
+}
+.dropdown-content {
+    display: none;
+    position: relative;
+    //background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+}
+
+.dropdown:click .dropdown-content {
+    display: block;
 }
