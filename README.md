@@ -13,3 +13,5 @@
 		- For each time you click the UNDO button, you will lose 5 points. 
 	Recommandation for winning:
 		"THE ONLY WINNING MOVE IS NOT TO PLAY. HOW ABOUT A NICE GAME OF CHESS?" - War Games.
+
+[![Build Status](https://travis-ci.org/cs361-W16/Group17-2.svg?branch=master)](https://travis-ci.org/cs361-W16/Group17-2)
