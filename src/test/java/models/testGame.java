@@ -62,6 +62,8 @@ public class testGame {
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());
         assertEquals(1,g.getScore());
+        g.remove(2);
+        assertEquals(0,g.cols.get(2).size());
     }
 
 
