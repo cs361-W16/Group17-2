@@ -23,6 +23,8 @@ vertical-align: text-top;
 }
 
 .cardLocation{
+width: 114px;
+height: 148px;
 display: inline;
 position: relative;
 margin-top: -100px;

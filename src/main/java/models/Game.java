@@ -9,32 +9,22 @@ import java.util.Random;
  */
 public class Game {
 
-    public java.util.List<Card> deck = new ArrayList<>();
+    public Deck deck;
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
     public int score;
 
-    public Game(){
+    public Game(String country){
+        if(country == "US")
+            deck = new US();
+        else if(country == "Spanish")
+            deck = new Spanish();
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         score=0;
-    }
-
-    public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
-        }
-    }
-
-    public void shuffle() {
-        long seed = System.nanoTime();
-        Collections.shuffle(deck, new Random(seed));
     }
 
     public void dealFour() {
@@ -89,7 +79,6 @@ public class Game {
     private Card getTopCard(int columnNumber) {
         return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
     }
-
 
     public void move(int colFrom, int colTo) {
         Card cardToMove = getTopCard(colFrom);

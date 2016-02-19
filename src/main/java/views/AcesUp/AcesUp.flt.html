@@ -56,35 +56,35 @@ function display(game) {
 }
 
 $.getJSON("http://localhost:8080/game", function( data ) {
-display(data);
-game = data;
+    display(data);
+    game = data;
 });
 
 
 $("#dealButton").click(function(){
     $.ajax({
-      type: "POST",
-      url: "/dealGame",
-      data: JSON.stringify(game),
-      success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        type: "POST",
+        url: "/dealGame",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
             game = data;
             display(data);},
-      contentType:"application/json; charset=utf-8",
-      dataType:"json",
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
     });
 });
 
 
 function removeCard(colNumber){
     $.ajax({
-    type: "POST",
-    url: "/removeCard/"+colNumber,
-    data: JSON.stringify(game),
-    success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-    game = data;
-    display(data);},
-    contentType:"application/json; charset=utf-8",
-    dataType:"json",
+        type: "POST",
+        url: "/removeCard/"+colNumber,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
     });
 
     $("#discard").attr("src","assets/cards/Back.png");
