@@ -12,10 +12,10 @@ public class Spanish extends Deck{
     public void buildDeck(){
         for(int i = 1; i < 13; i++){
             if(i==8){ i=10; }
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Cups));
-            deck.add(new Card(i,Suit.Swords));
-            deck.add(new Card(i,Suit.Coins));
+            cards.add(new Card(i,Suit.Clubs));
+            cards.add(new Card(i,Suit.Cups));
+            cards.add(new Card(i,Suit.Swords));
+            cards.add(new Card(i,Suit.Coins));
         }
     }
 

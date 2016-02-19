@@ -23,7 +23,8 @@ public class testCard {
     @Test
     public void testMoveCard(){
         Game g = new Game("US");
-        g.deck.buildDeck();
+        //g.deck.buildDeck();
+        g.buildDeck();
         g.customDeal(0,3,6,9);
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());

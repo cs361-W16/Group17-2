@@ -18,23 +18,28 @@ public class testGame {
     @Test
     public void testGameBuildDeck(){
         Game g = new Game("US");
-        g.deck.buildDeck();
+        //g.deck.buildDeck();
+        g.buildDeck();
         assertEquals(52,g.deck.size());
     }
 
     @Test
     public void testGameInit(){
         Game g = new Game("US");
-        g.deck.buildDeck();
-        g.deck.shuffle();
+        //g.deck.buildDeck();
+        //g.deck.shuffle();
+        g.buildDeck();
+        g.shuffle();
         assertNotEquals(2,g.deck.get(0).getValue());
     }
 
     @Test
     public void testGameStart(){
         Game g = new Game("US");
-        g.deck.buildDeck();
-        g.deck.shuffle();
+        //g.deck.buildDeck();
+        //g.deck.shuffle();
+        g.buildDeck();
+        g.shuffle();
         g.dealFour();
         assertEquals(1,g.cols.get(0).size());
         assertEquals(1,g.cols.get(1).size());
@@ -45,7 +50,8 @@ public class testGame {
     @Test
     public void testCustomDeal(){
         Game g = new Game("Spanish");
-        g.deck.buildDeck();
+        //g.deck.buildDeck();
+        g.buildDeck();
         g.customDeal(0,3,6,9);
         assertEquals("1Clubs",g.cols.get(0).get(0).toString());
         assertEquals("2Clubs",g.cols.get(1).get(0).toString());
@@ -56,7 +62,8 @@ public class testGame {
     @Test
     public void testRemoveFunction(){
         Game g = new Game("US");
-        g.deck.buildDeck();
+        //g.deck.buildDeck();
+        g.buildDeck();
         g.customDeal(0,3,6,9);
         assertEquals(0,g.getScore());
         g.remove(2);

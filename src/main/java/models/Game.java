@@ -9,23 +9,41 @@ import java.util.Random;
  */
 public class Game {
 
-    public Deck deck;
+    //public Deck deck;
+
+    public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
     public int score;
 
     public Game(String country){
-        if(country == "US")
+        /*if(country == "US")
             deck = new US();
         else if(country == "Spanish")
-            deck = new Spanish();
+            deck = new Spanish();*/
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         score=0;
     }
+/////
+    public void shuffle() {
+        long seed = System.nanoTime();
+        Collections.shuffle(deck, new Random(seed));
+    }
+
+    public void buildDeck(){
+        for(int i = 2; i < 15; i++){
+            deck.add(new Card(i,Suit.Clubs));
+            deck.add(new Card(i,Suit.Hearts));
+            deck.add(new Card(i,Suit.Diamonds));
+            deck.add(new Card(i,Suit.Spades));
+        }
+    }
+/////
+
 
     public void dealFour() {
         for(int i = 0; i < 4; i++){

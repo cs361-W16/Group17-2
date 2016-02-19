@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public abstract class Deck {
 
-    public java.util.List<Card> deck = new ArrayList<>();
+    public java.util.List<Card> cards = new ArrayList<>();
 
     public Deck(){
 
@@ -19,19 +19,19 @@ public abstract class Deck {
 
     public void shuffle() {
         long seed = System.nanoTime();
-        Collections.shuffle(deck, new Random(seed));
+        Collections.shuffle(cards, new Random(seed));
     }
 
     public void remove(int i){
-        deck.remove(i);
+        cards.remove(i);
     }
 
     public int size(){
-        return deck.size();
+        return cards.size();
     }
 
     public Card get(int i){
-        return deck.get(i);
+        return cards.get(i);
     }
 
 }
