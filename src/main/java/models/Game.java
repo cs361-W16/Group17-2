@@ -9,13 +9,16 @@ import java.util.Random;
  */
 public class Game {
 
-    public java.util.List<Card> deck = new ArrayList<>();
+    public Deck deck;
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
     public int score;
 
+    public boolean initialized = false;
+
     public Game(){
+        deck = new US();
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
@@ -23,25 +26,19 @@ public class Game {
         score=0;
     }
 
-    public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
-        }
-    }
-
-    public void shuffle() {
-        long seed = System.nanoTime();
-        Collections.shuffle(deck, new Random(seed));
-    }
-
     public void dealFour() {
         for(int i = 0; i < 4; i++){
             cols.get(i).add(deck.get(deck.size()-1));
             deck.remove(deck.size()-1);
         }
+    }
+
+    public void setCountry(int c){
+        if(c == 0)
+            deck = new US();
+        else if (c == 1)
+            deck = new Spanish();
+        initialized = true;
     }
 
     //customDeal to setup game for testing purposes
@@ -89,7 +86,6 @@ public class Game {
     private Card getTopCard(int columnNumber) {
         return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
     }
-
 
     public void move(int colFrom, int colTo) {
         Card cardToMove = getTopCard(colFrom);
