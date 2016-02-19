@@ -62,16 +62,18 @@ $.getJSON("http://localhost:8080/game", function( data ) {
 
 
 $("#dealButton").click(function(){
-    $.ajax({
-        type: "POST",
-        url: "/dealGame",
-        data: JSON.stringify(game),
-        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-            game = data;
-            display(data);},
-        contentType:"application/json; charset=utf-8",
-        dataType:"json",
-    });
+    if(game.initialized == true){
+        $.ajax({
+            type: "POST",
+            url: "/dealGame",
+            data: JSON.stringify(game),
+            success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+                game = data;
+                display(data);},
+            contentType:"application/json; charset=utf-8",
+            dataType:"json",
+        });
+    }
 });
 
 

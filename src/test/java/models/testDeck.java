@@ -10,6 +10,13 @@ import static org.junit.Assert.*;
 public class testDeck {
 
     @Test
+    public void testDeckCreate(){
+        Deck test = new Deck();
+        test.buildDeck();
+        assertNotNull(test);
+    }
+
+    @Test
     public void testBuildDeck(){
         Deck us = new US();
         us.buildDeck();
