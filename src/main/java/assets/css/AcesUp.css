@@ -50,6 +50,31 @@ width 100%;
 width: 20%
 }
 
+.blackground{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:9;
+    opacity: .8;
+}
+
+.chooseDeck{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 30%;
+    height: 60px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    z-index: 10;
+    overflow: auto;
+}
+
 #deal_button{
 background: url('../cards/empty.png') no-repeat;
 cursor:pointer;

@@ -38,10 +38,13 @@ public class ApplicationController {
     
     public Result gameGet(){
         Game g = new Game();
-        g.setCountry(0);
+        return Results.json().render(g);
+    }
+
+    public Result selDeck(Context context, @PathParam("dec") int country, Game g){
+        g.setCountry(country);
         g.deck.buildDeck();
         g.deck.shuffle();
-
         return Results.json().render(g);
     }
 

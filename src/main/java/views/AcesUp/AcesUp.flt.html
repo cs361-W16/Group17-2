@@ -4,6 +4,14 @@
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
+<div class="blackground"></div>
+<div class="chooseDeck">Choose your Deck:<br>
+    <select id="country">
+        <option>-- Select --</option>
+        <option value=0 id="US">US</option>
+        <option value=1 id="Spanish">Spanish</option>
+    </select>
+</div>
 
 <table>
     <tr>
@@ -28,30 +36,51 @@
 <script>
 
 var game;
+var country;
 
 function display(game) {
+    var dfolder;
     console.log(game);
     $( '.columnOfCards' ).html("");
 
+    if(country == 1)
+        dfolder="barajas";
+    else
+        dfolder="cards";
+
     $.each(game.cols[0], function( key, val ) {
-        $( '#c0' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        $( '#c0' ).append("<img src='assets/"+dfolder+"/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
     $.each(game.cols[1], function( key, val ) {
-        $( '#c1' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        $( '#c1' ).append("<img src='assets/"+dfolder+"/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
     $.each(game.cols[2], function( key, val ) {
-        $( '#c2' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        $( '#c2' ).append("<img src='assets/"+dfolder+"/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
     $.each(game.cols[3], function( key, val ) {
-        $( '#c3' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        $( '#c3' ).append("<img src='assets/"+dfolder+"/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
     });
 
     $("#score").html(game.score);
-    if(game.deck.length==0)
+
+    if(game.initialized==true){
+        $(".chooseDeck").css("display","none");
+        $(".blackground").css("display","none");
+    }
+    else{
+        $(".chooseDeck").css("display","block");
+        $(".blackground").css("display","block");
+    }
+
+
+    $(".blackground").html(game.deck.cards.length);
+    if((game.deck.size)==0){
         $("#dealButton").attr("src","");
+        $(".blackground").html(game.deck.cards.length);
+    }
     card_functionality();
 }
 
@@ -59,6 +88,25 @@ $.getJSON("http://localhost:8080/game", function( data ) {
     display(data);
     game = data;
 });
+
+$("#country").change(function(){
+    country = $(this).val();
+    chooseDeck($(this).val());
+});
+
+function chooseDeck(d){
+    $.ajax({
+        type: "POST",
+        url: "/dselect/"+d,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+
+}
 
 
 $("#dealButton").click(function(){

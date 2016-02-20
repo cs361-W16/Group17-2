@@ -6,7 +6,7 @@ package models;
 public class Spanish extends Deck{
 
     public Spanish(){
-
+        size=40;
     }
 
     public void buildDeck(){
