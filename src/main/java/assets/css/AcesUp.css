@@ -1,53 +1,57 @@
 tr{
-width: 20%;
+    width: 20%;
 }
 
 td{
-min-width: 114px;
-width:120px;
-height:20px;
-text-align:center;
+    min-width: 114px;
+    width:120px;
+    height:20px;
+    text-align:center;
 }
 
 .title{
-font-weight: bold;
+    font-weight: bold;
 }
 
 .columnOfCards{
-background: url('../cards/blank.png') no-repeat;
-background-position: center top;
-padding-top: 100px;
-width: 120px;
-height: 750px;
-vertical-align: text-top;
+    background: url('../cards/blank.png') no-repeat;
+    background-position: center top;
+    padding-top: 100px;
+    width: 120px;
+    height: 750px;
+    vertical-align: text-top;
 }
 
 .cardLocation{
-width: 114px;
-height: 148px;
-display: inline;
-position: relative;
-margin-top: -100px;
-/*background-color:#F0F0F0;*/
+    width: 114px;
+    height: 148px;
+    display: inline;
+    position: relative;
+    margin-top: -100px;
+    /*background-color:#F0F0F0;*/
 }
 
 .selected{
-position: center top;
-border: 2px solid red;
-border-radius: 10px;
+    position: center top;
+    border: 2px solid red;
+    border-radius: 10px;
 }
 
 #menu{
-width: 100%;
-text-align: center;
-padding: 15px;
-//color: darkgreen;
-width 100%;
-//background-color: #FF8080;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    //color: darkgreen;
+    width 100%;
+    //background-color: #FF8080;
 }
 
 #menu td {
-width: 20%
+    width: 20%
+}
+
+.discard {
+    background-color: white;
 }
 
 .blackground{
@@ -66,7 +70,7 @@ width: 20%
     top: 30%;
     left: 30%;
     width: 30%;
-    height: 60px;
+    height: 80px;
     padding: 20px;
     text-align: center;
     border: 2px solid black;
@@ -78,50 +82,76 @@ width: 20%
 .howtoplay{
     display: none;
     position: absolute;
+    text-align: left;
+  	//color:#ffffff;
+   	font-family:Arial;
+	background-color:#8c6c4c;
+	overflow: auto;
     z-index: 5;
-    top: -300px;
-    background-color: white;
+    top: -500px;
     border: 2px solid black;
-    width: 300px;
-    height: 280px;
+    padding: 10px;
+    width: 420px;
+    height: 460px;
 }
 
-#deal_button{
-background: url('../cards/empty.png') no-repeat;
-cursor:pointer;
+.credit{
+    display: none;
+    position: absolute;
+    text-align: left;
+  	//color:#ffffff;
+   	font-family:Arial;
+	background-color:#8c6c4c;
+	overflow: auto;
+    z-index: 5;
+    top: -240px;
+    right: 0px;
+    border: 2px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+}
 
+
+
+
+
+#deal_button{
+    background: url('../cards/empty.png') no-repeat;
+    cursor:pointer;
 }
 
 h1{
-text-align:center;
-font-size:450%;
-margin: 20px 0px 20px 0px;
+    text-align:center;
+    font-size:450%;
+    margin: 20px 0px 20px 0px;
 }
 
 h2{
-font-size:120%;
-font-color: #E78534
-font-weight: bold;
+    font-size:120%;
+    text-align: center;
+    font-color: white;
+    font-weight: bold;
 }
 
 table{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-position: relative;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
 }
 
 footer{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-background-color:green;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:green;
 }
 
 body{
-background-size:cover;
-background-image: url("../cards/felt.png");
-margin: 0px;
+    background-size:cover;
+    background-image: url("../cards/felt.png");
+    margin: 0px;
 }
 
 button{
