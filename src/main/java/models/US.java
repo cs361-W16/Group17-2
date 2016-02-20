@@ -7,7 +7,7 @@ public class US extends Deck {
 
 
     public US(){
-
+        size = 52;
     }
 
     public void buildDeck(){

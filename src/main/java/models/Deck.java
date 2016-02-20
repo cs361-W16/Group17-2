@@ -11,6 +11,8 @@ public class Deck {
 
     public java.util.List<Card> cards = new ArrayList<>();
 
+    public int size;
+
     public Deck(){
 
     }
@@ -24,6 +26,7 @@ public class Deck {
 
     public void remove(int i){
         cards.remove(i);
+        size--;
     }
 
     public int size(){
