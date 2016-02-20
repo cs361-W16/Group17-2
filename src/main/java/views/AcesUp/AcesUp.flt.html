@@ -7,7 +7,7 @@
 <div class="blackground"></div>
 <div class="chooseDeck">Choose your Deck:<br>
     <select id="country">
-        <option>-- Select --</option>
+        <option selected="selected">-- Select --</option>
         <option value=0 id="US">US</option>
         <option value=1 id="Spanish">Spanish</option>
     </select>
@@ -105,8 +105,8 @@ function chooseDeck(d){
         contentType:"application/json; charset=utf-8",
         dataType:"json",
     });
-
 }
+
 
 
 $("#dealButton").click(function(){
@@ -123,6 +123,27 @@ $("#dealButton").click(function(){
         });
     }
 });
+
+
+
+
+$("#newGame").click(function() {
+
+    $(".chooseDeck").html("Are you sure you want to start a new game? <br><button id='Sure'>Sure</button> <button id='No'>No</button>");
+    $(".chooseDeck").css("display","block");
+    $(".blackground").css("display","block");
+
+    $("#Sure").click(function() {
+         location.reload();
+    });
+
+    $("#No").click(function() {
+          $(".chooseDeck").css("display","none");
+         $(".blackground").css("display","none");
+});
+});
+
+
 
 
 function removeCard(colNumber){
