@@ -26,7 +26,7 @@
 
 <hr style="margin:0px;">
 <footer id="menu"><table><tr>
-    <td><button id="howTo">How to Play</button></td>
+    <td><button id="howTo">How to Play</button><div class="howtoplay">some text here</div></td>
     <td>Score: <span id="score">0</span></td>
     <td><button id="newGame">New Game</button></td>
     <td><button id="undo">Undo</button></td>
@@ -108,6 +108,10 @@ function chooseDeck(d){
 
 }
 
+$("#howTo").click(function(){
+    $(".howtoplay").toggleClass("display");
+
+});
 
 $("#dealButton").click(function(){
     if(game.initialized == true){

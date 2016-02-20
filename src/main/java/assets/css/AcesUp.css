@@ -75,6 +75,17 @@ width: 20%
     overflow: auto;
 }
 
+.howtoplay{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: -300px;
+    background-color: white;
+    border: 2px solid black;
+    width: 300px;
+    height: 280px;
+}
+
 #deal_button{
 background: url('../cards/empty.png') no-repeat;
 cursor:pointer;
@@ -152,5 +163,9 @@ button{
 }
 
 .dropdown:click .dropdown-content {
+    display: block;
+}
+
+.display{
     display: block;
 }
